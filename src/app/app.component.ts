@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name = 'sample app';
+  isUserNameEmpty = false;
+  showText = false;
+  clickEvents = [];
+
+  getBackground(i){
+    if(i >= 5){
+      return "blue";
+    }
+  }
+
+  toggleDisplay(){
+    this.clickEvents.push(new Date().getTime());
+    if(this.showText){
+      this.showText = false;
+    } else {
+      this.showText = true
+    }
+  }
 }

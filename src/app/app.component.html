@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>App Component</h1>
+      <hr>
+      <app-servers></app-servers>
+    </div>
+    <div class="col-xs-12">
+      <app-success-alert></app-success-alert>
+      <app-warning-alert></app-warning-alert>
+    </div>
+  </div>
+</div>
+
+<ol>
+  <li>Add a Input field which updates a property ('username') via Two-Way-Binding</li>
+  <li>Output the username property via String Interpolation (in a paragraph below the input)</li>
+  <li>Add a button which may only be clicked if the username is NOT an empty string</li>
+  <li>Upon clicking the button, the username should be reset to an empty string</li>
+</ol>
+<hr>
+<div class="container">
+  <input type="text" name="username" id="username" [(ngModel)]="username">
+  <p>{{username}}</p>
+  <button class="btn btn-primary" type="button" [disabled]="!username" (click)="username=''">Submit</button>
+</div>
+<hr>
+<div class="container">
+  <div class="col-xs-12">
+    <button class="btn btn-primary" type="button" (click)="toggleDisplay()">Display Details</button> 
+  </div>
+  <div class="col-xs-12">
+    <p *ngIf="showText">
+      Secret password = tuna
+    </p>
+    <div class="container col-xs-6">
+      <p *ngFor="let item of clickEvents; let i = index" [ngStyle]="{backgroundColor: getBackground(i)}" [ngClass]="{textcolor: i>=5}">{{item}}</p>
+    </div>
+  </div>
+</div>
